@@ -14,11 +14,13 @@ class Solution:
                 if (i==j):
                     pal[i][j] = True
                 elif (i-j == 1):
-                    pal[i][j]= s[i]==s[j]
+                    if s[i]==s[j]:
+                        pal[i][j]= True
                 else:
-                    pal[i][j] = True if(pal[i-1][j+1] and s[i]==s[j]) else False
+                    if((j+1 in pal[i-1]) and s[i]==s[j]):
+                        pal[i][j] = True 
                 
-                if (pal[i][j]):
+                if (j in pal[i]):
                     if (i-j+1 > max_len):
                         max_len = i-j+1
                         r_i = i
