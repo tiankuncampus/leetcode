@@ -10,7 +10,7 @@ class Solution:
         for symbol in s:
             if (symbol=='[' or symbol=='(' or symbol == '{'):
                 symbols.append(symbol)
-            elif (not symbol or symbolmap.get(symbols[-1]) != symbol):
+            elif (not symbols or symbolmap.get(symbols[-1]) != symbol):
                 return False
             else:
                 symbols.pop()
