@@ -34,7 +34,9 @@ class Solution:
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
         dp = [[False]*(len(p)+1) for i in range(len(s)+1)]
-        dp[0][0] = True
+        dp[0][0] = True  #s前i 各元素  和p 前j个元素   是否模式匹配
+
+        #空的s 和 模式p 的前j个元素的模式匹配的情况
         for j in range(2, len(p)+1):
             dp[0][j] = dp[0][j-2] and (p[j-1] == '*')
 
